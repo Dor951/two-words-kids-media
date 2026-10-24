@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "Only show the next due post"
+        description: "true = show next due post, probe = check the token, false = post"
         default: "true"
 permissions:
   contents: write
@@ -23,7 +23,7 @@ jobs:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
         run: |
-          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then python3 scripts/ig_post.py --dry-run; else python3 scripts/ig_post.py; fi
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then python3 scripts/ig_post.py --dry-run; elif [ "${{ github.event.inputs.dry_run }}" = "probe" ]; then python3 scripts/ig_post.py --probe; else python3 scripts/ig_post.py; fi
       - name: Save log
         run: |
           git config user.name twk-bot && git config user.email bot@users.noreply.github.com

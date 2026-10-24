@@ -1,6 +1,6 @@
 """Post the next due Instagram image (one per day at most) from instagram/schedule.json, at most one per run.
 A post is due when its date and time_utc have passed, it has no "hold", and it is not in posted.json.
-Env: IG_ACCESS_TOKEN, IG_USER_ID (Instagram API with Instagram Login). Run: python3 scripts/ig_post.py [--dry-run]"""
+Env: IG_ACCESS_TOKEN, IG_USER_ID (Instagram API with Instagram Login). Run: python3 scripts/ig_post.py [--dry-run | --probe]"""
 import json, os, sys, time, datetime, urllib.request, urllib.parse, urllib.error
 API = "https://graph.instagram.com/v21.0"
 RAW = "https://raw.githubusercontent.com/Dor951/two-words-kids-media/main/"
@@ -17,6 +17,12 @@ def due(posts, done, now):
     for p in posts:
         at = datetime.datetime.fromisoformat(f"{p['date']}T{p.get('time_utc', '17:00')}")
         if p["id"] not in done and not p.get("hold") and at <= now: return p
+def probe():
+    tok = os.environ.get("IG_ACCESS_TOKEN")
+    if not tok: raise SystemExit("IG_ACCESS_TOKEN secret is missing")
+    me = call("GET", f"{API}/me?fields=user_id,username&access_token={tok}")
+    if "username" not in me: raise SystemExit("token does not work")
+    print("token ok for", me["username"], "user_id", me.get("user_id"), "| IG_USER_ID secret:", os.environ.get("IG_USER_ID"))
 def main(dry):
     posts = json.load(open(os.path.join(ROOT, "instagram/schedule.json")))["posts"]
     log = json.load(open(LOG)); done = {e["id"] for e in log}
@@ -45,4 +51,4 @@ def main(dry):
     # long-lived tokens last 60 days; refreshing keeps the same token alive
     r = call("GET", f"{API.rsplit('/', 1)[0]}/refresh_access_token?grant_type=ig_refresh_token&access_token={tok}")
     if r.get("access_token") and r["access_token"] != tok: print("WARNING: token changed, update the IG_ACCESS_TOKEN secret")
-if __name__ == "__main__": main("--dry-run" in sys.argv)
+if __name__ == "__main__": probe() if "--probe" in sys.argv else main("--dry-run" in sys.argv)
