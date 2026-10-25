@@ -1,9 +1,10 @@
-"""Post the next due Instagram image (one per day at most) from instagram/schedule.json, at most one per run.
+"""Post the next due Instagram image or Reel (one per day at most) from instagram/schedule.json, at most one per run.
 A post is due when its date and time_utc have passed, it has no "hold", and it is not in posted.json.
 Env: IG_ACCESS_TOKEN, IG_USER_ID (Instagram API with Instagram Login). Run: python3 scripts/ig_post.py [--dry-run | --probe]"""
 import json, os, sys, time, datetime, urllib.request, urllib.parse, urllib.error
 API = "https://graph.instagram.com/v21.0"
 RAW = "https://raw.githubusercontent.com/Dor951/two-words-kids-media/main/"
+CDN = "https://cdn.jsdelivr.net/gh/Dor951/two-words-kids-media@main/"   # serves video/mp4 with the right content type
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LOG = os.path.join(ROOT, "instagram/posted.json")
 def call(method, url, params=None):
@@ -23,6 +24,26 @@ def probe():
     me = call("GET", f"{API}/me?fields=user_id,username&access_token={tok}")
     if "username" not in me: raise SystemExit("token does not work")
     print("token ok for", me["username"], "user_id", me.get("user_id"), "| IG_USER_ID secret:", os.environ.get("IG_USER_ID"))
+def wait(cid, tok, tries):
+    for _ in range(tries):
+        st = call("GET", f"{API}/{cid}?fields=status_code,status&access_token={tok}")
+        if st.get("status_code") == "FINISHED": return True
+        if st.get("status_code") == "ERROR": print("container error:", st.get("status")); return False
+        time.sleep(10)
+    return False
+def create_image(p, uid, tok):
+    base = {"image_url": RAW + p["image"], "caption": p["caption"], "access_token": tok}
+    c = call("POST", f"{API}/{uid}/media", {**base, "alt_text": p["alt_text"]})
+    if "id" not in c: c = call("POST", f"{API}/{uid}/media", base)   # retry without alt text
+    if "id" not in c or not wait(c["id"], tok, 20): raise SystemExit("could not create image container")
+    return c
+def create_reel(p, uid, tok):
+    for host in (CDN, RAW):
+        c = call("POST", f"{API}/{uid}/media", {"media_type": "REELS", "video_url": host + p["video"], "cover_url": RAW + p["cover"],
+                                                 "caption": p["caption"], "share_to_feed": "true", "access_token": tok})
+        if "id" in c and wait(c["id"], tok, 40): return c
+        print("reel container failed from", host)
+    raise SystemExit("could not create reel container")
 def main(dry):
     posts = json.load(open(os.path.join(ROOT, "instagram/schedule.json")))["posts"]
     log = json.load(open(LOG)); done = {e["id"] for e in log}
@@ -31,18 +52,10 @@ def main(dry):
         print("skip: posted within the last 10h"); return   # backup cron must not double-post
     p = due(posts, done, now)
     if not p: print("nothing due"); return
-    if dry: print("dry run, next due:", p["id"], RAW + p["image"]); return
+    if dry: print("dry run, next due:", p["id"], p.get("image") or p.get("video")); return
     tok, uid = os.environ.get("IG_ACCESS_TOKEN"), os.environ.get("IG_USER_ID")
     if not tok or not uid: print("no IG_ACCESS_TOKEN / IG_USER_ID secrets yet, skipping"); return
-    base = {"image_url": RAW + p["image"], "caption": p["caption"], "access_token": tok}
-    c = call("POST", f"{API}/{uid}/media", {**base, "alt_text": p["alt_text"]})
-    if "id" not in c: c = call("POST", f"{API}/{uid}/media", base)   # retry without alt text
-    if "id" not in c: raise SystemExit("could not create media container")
-    for _ in range(20):
-        st = call("GET", f"{API}/{c['id']}?fields=status_code&access_token={tok}").get("status_code")
-        if st == "FINISHED": break
-        if st == "ERROR": raise SystemExit("container error")
-        time.sleep(10)
+    c = create_reel(p, uid, tok) if p.get("type") == "reel" else create_image(p, uid, tok)
     pub = call("POST", f"{API}/{uid}/media_publish", {"creation_id": c["id"], "access_token": tok})
     if "id" not in pub: raise SystemExit("publish failed")
     log.append({"id": p["id"], "media_id": pub["id"], "at": datetime.datetime.utcnow().isoformat() + "Z"})
