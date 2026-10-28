@@ -45,6 +45,11 @@
    }
   ]
  },
- "etsy": null,
+ "etsy": {
+  "sales_total": 0,
+  "shop_favorites": 0,
+  "active_listings": 4,
+  "listings": []
+ },
  "pinterest": null
 }
