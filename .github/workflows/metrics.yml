@@ -1,0 +1,26 @@
+name: metrics
+on:
+  schedule:
+    - cron: "30 5 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: metrics
+  cancel-in-progress: false
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect metrics
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          ETSY_API_KEY: ${{ secrets.ETSY_API_KEY }}
+        run: python3 scripts/metrics.py
+      - name: Save snapshot
+        run: |
+          git config user.name twk-bot && git config user.email bot@users.noreply.github.com
+          git add metrics
+          if ! git diff --cached --quiet; then git commit -m "metrics snapshot" && git pull --rebase origin main && git push origin HEAD:main; fi
