@@ -1,0 +1,92 @@
+{
+ "date": "2026-10-29",
+ "instagram": {
+  "username": "twowordskids",
+  "followers_count": 0,
+  "media_count": 4,
+  "posts": [
+   {
+    "id": "reel-hanukkah-ner",
+    "type": "reel",
+    "posted": "2026-10-25",
+    "permalink": "https://www.instagram.com/reel/De7d11ulPhX/",
+    "likes": 0,
+    "comments": 0,
+    "views": 43,
+    "reach": 39,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 0
+   },
+   {
+    "id": "ig-christmas-estrella",
+    "type": "post",
+    "posted": "2026-10-26",
+    "permalink": "https://www.instagram.com/p/De-Qu1PG0Am/",
+    "likes": 0,
+    "comments": 0,
+    "views": 0,
+    "reach": 0,
+    "saved": 0,
+    "shares": 0
+   },
+   {
+    "id": "reel-hanukkah-sevivon",
+    "type": "reel",
+    "posted": "2026-10-27",
+    "permalink": "https://www.instagram.com/reel/DfAzHBMjhus/",
+    "likes": 0,
+    "comments": 0,
+    "views": 56,
+    "reach": 49,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 0
+   },
+   {
+    "id": "ig-christmas-regalo",
+    "type": "post",
+    "posted": "2026-10-28",
+    "permalink": "https://www.instagram.com/p/DfDaiI-oA12/",
+    "likes": 0,
+    "comments": 0,
+    "views": 0,
+    "reach": 0,
+    "saved": 0,
+    "shares": 0
+   }
+  ]
+ },
+ "etsy": {
+  "sales_total": 0,
+  "shop_favorites": 0,
+  "active_listings": 4,
+  "listings": [
+   {
+    "listing_id": 4596782769,
+    "title": "Hanukkah Christmas Bundle for Kids, Bilingual Hebrew Spanish",
+    "views": 7,
+    "favorites": 0
+   },
+   {
+    "listing_id": 4596779151,
+    "title": "Bilingual Christmas Activity Pack for Kids, French English P",
+    "views": 5,
+    "favorites": 0
+   },
+   {
+    "listing_id": 4589168931,
+    "title": "Bilingual Christmas Activity Pack for Kids, Spanish English ",
+    "views": 3,
+    "favorites": 0
+   },
+   {
+    "listing_id": 4588874359,
+    "title": "Bilingual Hanukkah Activity Pack for Kids, Hebrew English Pr",
+    "views": 8,
+    "favorites": 0
+   }
+  ]
+ },
+ "pinterest": null
+}
