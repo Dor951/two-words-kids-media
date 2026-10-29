@@ -60,8 +60,26 @@
  "etsy": {
   "sales_total": 0,
   "shop_favorites": 0,
-  "active_listings": 4,
+  "active_listings": 7,
   "listings": [
+   {
+    "listing_id": 4605534546,
+    "title": "Bilingual Halloween Fall Activity Pack for Kids, Spanish Eng",
+    "views": 0,
+    "favorites": 0
+   },
+   {
+    "listing_id": 4602434376,
+    "title": "Spanish Flashcards for Toddlers, First 50 Words, Bilingual S",
+    "views": 0,
+    "favorites": 0
+   },
+   {
+    "listing_id": 4602411005,
+    "title": "Hebrew Flashcards for Toddlers, First 50 Words, Bilingual He",
+    "views": 0,
+    "favorites": 0
+   },
    {
     "listing_id": 4596782769,
     "title": "Hanukkah Christmas Bundle for Kids, Bilingual Hebrew Spanish",
@@ -76,13 +94,13 @@
    },
    {
     "listing_id": 4589168931,
-    "title": "Bilingual Christmas Activity Pack for Kids, Spanish English ",
+    "title": "Spanish Christmas Activities for Kids, Bilingual Spanish Eng",
     "views": 3,
     "favorites": 0
    },
    {
     "listing_id": 4588874359,
-    "title": "Bilingual Hanukkah Activity Pack for Kids, Hebrew English Pr",
+    "title": "Hanukkah Activities for Kids, Hebrew English Printable Pack,",
     "views": 8,
     "favorites": 0
    }
