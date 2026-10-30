@@ -1,9 +1,9 @@
 {
- "date": "2026-10-29",
+ "date": "2026-10-30",
  "instagram": {
   "username": "twowordskids",
   "followers_count": 0,
-  "media_count": 4,
+  "media_count": 5,
   "posts": [
    {
     "id": "reel-hanukkah-ner",
@@ -54,6 +54,19 @@
     "reach": 0,
     "saved": 0,
     "shares": 0
+   },
+   {
+    "id": "reel-halloween-calabaza",
+    "type": "reel",
+    "posted": "2026-10-29",
+    "permalink": "https://www.instagram.com/reel/DfGAJ2IioVb/",
+    "likes": 0,
+    "comments": 0,
+    "views": 34,
+    "reach": 26,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 0
    }
   ]
  },
@@ -77,19 +90,19 @@
    {
     "listing_id": 4602411005,
     "title": "Hebrew Flashcards for Toddlers, First 50 Words, Bilingual He",
-    "views": 0,
+    "views": 3,
     "favorites": 0
    },
    {
     "listing_id": 4596782769,
     "title": "Hanukkah Christmas Bundle for Kids, Bilingual Hebrew Spanish",
-    "views": 7,
+    "views": 8,
     "favorites": 0
    },
    {
     "listing_id": 4596779151,
     "title": "Bilingual Christmas Activity Pack for Kids, French English P",
-    "views": 5,
+    "views": 6,
     "favorites": 0
    },
    {
@@ -101,7 +114,7 @@
    {
     "listing_id": 4588874359,
     "title": "Hanukkah Activities for Kids, Hebrew English Printable Pack,",
-    "views": 8,
+    "views": 9,
     "favorites": 0
    }
   ]
