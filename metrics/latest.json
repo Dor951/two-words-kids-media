@@ -1,9 +1,9 @@
 {
- "date": "2026-11-03",
+ "date": "2026-11-04",
  "instagram": {
   "username": "twowordskids",
   "followers_count": 0,
-  "media_count": 9,
+  "media_count": 10,
   "posts": [
    {
     "id": "reel-hanukkah-ner",
@@ -88,8 +88,8 @@
     "permalink": "https://www.instagram.com/reel/DfLAxf7jggP/",
     "likes": 0,
     "comments": 0,
-    "views": 159,
-    "reach": 128,
+    "views": 161,
+    "reach": 129,
     "saved": 0,
     "shares": 0,
     "total_interactions": 0
@@ -101,8 +101,8 @@
     "permalink": "https://www.instagram.com/reel/DfNqMSAAIM7/",
     "likes": 0,
     "comments": 0,
-    "views": 143,
-    "reach": 122,
+    "views": 144,
+    "reach": 123,
     "saved": 0,
     "shares": 0,
     "total_interactions": 0
@@ -118,6 +118,19 @@
     "reach": 0,
     "saved": 0,
     "shares": 0
+   },
+   {
+    "id": "reel-christmas-estrella",
+    "type": "reel",
+    "posted": "2026-11-03",
+    "permalink": "https://www.instagram.com/reel/DfS7vD1gQo1/",
+    "likes": 1,
+    "comments": 0,
+    "views": 161,
+    "reach": 143,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 1
    }
   ]
  },
