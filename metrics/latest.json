@@ -1,9 +1,9 @@
 {
- "date": "2026-11-06",
+ "date": "2026-11-07",
  "instagram": {
   "username": "twowordskids",
   "followers_count": 0,
-  "media_count": 12,
+  "media_count": 13,
   "posts": [
    {
     "id": "reel-hanukkah-ner",
@@ -151,11 +151,23 @@
     "permalink": "https://www.instagram.com/reel/DfYH64YDx_e/",
     "likes": 0,
     "comments": 0,
-    "views": 81,
-    "reach": 66,
+    "views": 82,
+    "reach": 67,
     "saved": 0,
     "shares": 0,
     "total_interactions": 0
+   },
+   {
+    "id": "ig-hanukkah-sevivon",
+    "type": "post",
+    "posted": "2026-11-06",
+    "permalink": "https://www.instagram.com/p/DfaoUwwlYxE/",
+    "likes": 0,
+    "comments": 0,
+    "views": 0,
+    "reach": 0,
+    "saved": 0,
+    "shares": 0
    }
   ]
  },
