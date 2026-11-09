@@ -1,9 +1,9 @@
 {
- "date": "2026-11-08",
+ "date": "2026-11-09",
  "instagram": {
   "username": "twowordskids",
   "followers_count": 0,
-  "media_count": 14,
+  "media_count": 15,
   "posts": [
    {
     "id": "reel-hanukkah-ner",
@@ -181,6 +181,18 @@
     "saved": 0,
     "shares": 0,
     "total_interactions": 0
+   },
+   {
+    "id": "ig-hanukkah-sufganiyah",
+    "type": "post",
+    "posted": "2026-11-08",
+    "permalink": "https://www.instagram.com/p/Dffrl0aAaof/",
+    "likes": 0,
+    "comments": 0,
+    "views": 0,
+    "reach": 0,
+    "saved": 0,
+    "shares": 0
    }
   ]
  },
@@ -228,7 +240,7 @@
    {
     "listing_id": 4588874359,
     "title": "Hanukkah Activities for Kids, Hebrew English Printable Pack,",
-    "views": 9,
+    "views": 11,
     "favorites": 0
    }
   ]
