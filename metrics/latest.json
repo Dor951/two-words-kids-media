@@ -1,5 +1,5 @@
 {
- "date": "2026-11-19",
+ "date": "2026-11-20",
  "instagram": {
   "username": "twowordskids",
   "followers_count": 0,
@@ -197,10 +197,16 @@
   ]
  },
  "etsy": {
-  "sales_total": 0,
+  "sales_total": 1,
   "shop_favorites": 0,
   "active_listings": 7,
   "listings": [
+   {
+    "listing_id": 4602411005,
+    "title": "Hebrew Flashcards for Toddlers, First 50 Words, Bilingual He",
+    "views": 5,
+    "favorites": 0
+   },
    {
     "listing_id": 4605534546,
     "title": "Bilingual Halloween Fall Activity Pack for Kids, Spanish Eng",
@@ -211,12 +217,6 @@
     "listing_id": 4602434376,
     "title": "Spanish Flashcards for Toddlers, First 50 Words, Bilingual S",
     "views": 0,
-    "favorites": 0
-   },
-   {
-    "listing_id": 4602411005,
-    "title": "Hebrew Flashcards for Toddlers, First 50 Words, Bilingual He",
-    "views": 3,
     "favorites": 0
    },
    {
