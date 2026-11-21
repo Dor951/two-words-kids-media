@@ -1,5 +1,5 @@
 {
- "date": "2026-11-20",
+ "date": "2026-11-21",
  "instagram": {
   "username": "twowordskids",
   "followers_count": 0,
@@ -199,8 +199,38 @@
  "etsy": {
   "sales_total": 1,
   "shop_favorites": 0,
-  "active_listings": 7,
+  "active_listings": 12,
   "listings": [
+   {
+    "listing_id": 4621791614,
+    "title": "Happy Hanukkah Poster Printable, Hebrew English Hanukkah Wal",
+    "views": 0,
+    "favorites": 0
+   },
+   {
+    "listing_id": 4621784819,
+    "title": "Hanukkah Words Poster, Hebrew English Vocabulary Printable, ",
+    "views": 0,
+    "favorites": 0
+   },
+   {
+    "listing_id": 4621792438,
+    "title": "Feliz Navidad Poster Printable, Spanish English Christmas Wa",
+    "views": 0,
+    "favorites": 0
+   },
+   {
+    "listing_id": 4621792852,
+    "title": "Spanish Christmas Words Poster, Bilingual Spanish English Vo",
+    "views": 0,
+    "favorites": 0
+   },
+   {
+    "listing_id": 4621785951,
+    "title": "Joyeux Noel Poster Printable, French English Christmas Wall ",
+    "views": 0,
+    "favorites": 0
+   },
    {
     "listing_id": 4602411005,
     "title": "Hebrew Flashcards for Toddlers, First 50 Words, Bilingual He",
